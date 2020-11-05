@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/reservation', 'ReservationController@index');
+Route::get('/layout/Submitted', 'ReservationController@submitted');
