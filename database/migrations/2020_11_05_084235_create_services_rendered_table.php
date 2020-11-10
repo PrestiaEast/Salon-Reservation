@@ -15,9 +15,10 @@ class CreateServicesRenderedTable extends Migration
     {
         Schema::create('services_rendered', function (Blueprint $table) {
             $table->id();
-            $table->string('service id')->unique();
-            $table->string('Month');
-            $table->integer('service charge');
+            $table->string('service_id')->unique();
+            $table->integer('customer_id');
+            $table->string('month');
+            $table->integer('service_charge');
             $table->timestamps();
         });
     }
