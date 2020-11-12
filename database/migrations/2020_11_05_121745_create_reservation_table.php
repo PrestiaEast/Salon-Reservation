@@ -15,11 +15,10 @@ class CreateReservationTable extends Migration
     {
         Schema::create('reservation', function (Blueprint $table) {
             $table->id();
-            $table->string('service id')->unique();
-            $table->string('service name');
-            $table->decimal('service charge', 10, 2);
-            $table->string('employee name');
-            $table->date('Month');
+            $table->string('service_id')->unique();
+            $table->string('service_name');
+            $table->integer('service_charge');
+            $table->string('employee_name');
             $table->timestamps();
         });
     }
