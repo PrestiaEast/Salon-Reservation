@@ -16,3 +16,25 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Index - read
+Route::get('/services', 'ServicesController@index');
+
+//Create
+Route::get('/services/create', 'ServicesController@create');
+
+//Show - read
+Route::get('/services/{service}', 'ServicesController@show');
+
+//Store
+Route::post('/services', 'ServicesController@store');
+
+//Edit
+Route::get('/services/{service}/edit', 'ServicesController@edit');
+
+//Update
+Route::put('/services/{service}', 'ServicesController@update');
+
+//Delete
+Route::get('/services/{service}/delete', 'ServicesController@delete');
+
