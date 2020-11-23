@@ -13,18 +13,18 @@
 			</thead>
 
 			<tbody>
-				@foreach($reservation as $reservation)
+				@foreach($reservations as $reservation)
 				<tr>
 					<td>{{ $reservation->id }}</td>
 					<td>{{ $reservation->service_name }}</td>
 					<td>{{ $reservation->service_charge }}</td>
 					<td>{{ $reservation->employee_name }}</td>
 					<td>
-						<a href="/reservation/{{ $reservation->id }}">Show</a>
+						<a href="/reservations/{{ $reservation->id }}">Show</a>
 						|
-						<a href="/reservation/{{ $reservation->id }}/edit">Edit</a>
+						<a href="/reservations/{{ $reservation->id }}/edit">Edit</a>
 						|
-						<a href="/reservation/{{ $reservation->id }}/delete">Delete</a>
+						<a href="/reservations/{{ $reservation->id }}/delete">Delete</a>
 					</td>
 				</tr>
 			@endforeach

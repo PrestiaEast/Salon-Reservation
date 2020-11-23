@@ -31,7 +31,7 @@ class ReservationController extends Controller
     	$reservation->employee_name = request()->employee_name;
     	$reservation->save();
 
-    	return redirect('/reservation');
+    	return redirect('/reservations');
     }
 
     public function edit(Reservation $reservation)
@@ -46,13 +46,13 @@ class ReservationController extends Controller
     	$reservation->employee_name = request()->employee_name;
     	$reservation->save();
 
-    	return redirect('/reservation');
+    	return redirect('/reservations');
     }
 
     public function delete (Reservation $reservation)
     {
     	$reservation->delete();
-    	return redirect('/reservation');
+    	return redirect('/reservations');
     }
 
 

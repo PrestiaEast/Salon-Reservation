@@ -2,7 +2,7 @@
 @section('content')
 	<div class="container">
 		<h5>New Reservation Form</h5>
-		<form method="POST" action="/services">
+		<form method="POST" action="/reservations">
 			@csrf
 			
 			  <div class="form-group">
@@ -12,7 +12,7 @@
 
 			  <div class="form-group">
 			    <label for="newreservation">Service Charge:</label>
-			    <input type="text" class="form-control" id="newreservation" name="number">
+			    <input type="number" class="form-control" id="newreservation">
 			  </div>
 
 			  <div class="form-group">

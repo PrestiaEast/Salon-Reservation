@@ -18,22 +18,22 @@ Route::get('/', function () {
 });
 
 //Index-read
-Route::get('/reservation', 'ReservationController@index');
+Route::get('/reservations', 'ReservationController@index');
 
 //Create
-Route::get('/reservation/create', 'ReservationController@create');
+Route::get('/reservations/create', 'ReservationController@create');
 
 //Show - read
-Route::get('/reservation/{reservation}', 'ReservationController@show');
+Route::get('/reservations/{reservation}', 'ReservationController@show');
 
 //Store
-Route::post('/reservation', 'ReservationController@store');
+Route::post('/reservations', 'ReservationController@store');
 
 //Edit
-Route::get('/reservation/{reservation}/edit', 'ReservationController@edit');
+Route::get('/reservations/{reservation}/edit', 'ReservationController@edit');
 
 //Update
-Route::put('/reservation/{reservation}', 'ReservationController@update');
+Route::put('/reservations/{reservation}', 'ReservationController@update');
 
 //Delete
-Route::get('/reservation/{reservation}/delete', 'ReservationController@delete');
+Route::get('/reservations/{reservation}/delete', 'ReservationController@delete');
