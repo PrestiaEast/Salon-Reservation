@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class CustomersController extends Controller
 {
-    //get all
+//get all
     public function index()
     {
     	$customers = Customer::get();
@@ -25,14 +25,23 @@ class CustomersController extends Controller
 
 	public function store()
 	{
-		$customer = new Customer;
-		$customer->name = request()->name;
-		$customer->age = request()->age;
-		$customer->contact_number = request()->contact_number;
-		$customer->services_reserved = request()->services_reserved;
-		$customer->save();
+		// $customer = new Customer;
+		// $customer->name = request()->name;
+		// $customer->age = request()->age;
+		// $customer->contact_number = request()->contact_number;
+		// $customer->services_reserved = request()->services_reserved;
+		// $customer->save();
+		$validated_fields = request()->validate([
+			'name' => 'required',
+			'age' => 'required',
+			'contact_number' => 'required|unique:customers',
+			'services_reserved' => 'required',
+			'time_arrived' => 'required'
+		]);
+		//add customer in database
+		$customer = Customer::create($validated_fields);
 
-		return redirect('/customer');
+		 return redirect('/customer');
 	}
 
 	public function edit(Customer $customer)

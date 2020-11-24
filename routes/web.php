@@ -16,3 +16,24 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//index - read of crud
+Route::get('/customer', 'CustomersController@index');
+
+//create 
+Route::get('/customers', 'CustomersController@create');
+//store data
+ Route::post('/customers', 'CustomersController@store');
+
+//show (single) - read of crud
+ Route::get('/customer/{customer}', 'CustomersController@show');
+
+
+//edit
+Route::get('/customer/{customer}/edit', 'CustomersController@edit');
+
+//update
+Route::put('/customer/{customer}', 'CustomersController@update');
+
+//delete
+Route::delete('/customer/{customer}', 'CustomersController@delete');
