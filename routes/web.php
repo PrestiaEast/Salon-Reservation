@@ -16,3 +16,24 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Index-read
+Route::get('/reservations', 'ReservationController@index');
+
+//Create
+Route::get('/reservations/create', 'ReservationController@create');
+
+//Show - read
+Route::get('/reservations/{reservation}', 'ReservationController@show');
+
+//Store
+Route::post('/reservations', 'ReservationController@store');
+
+//Edit
+Route::get('/reservations/{reservation}/edit', 'ReservationController@edit');
+
+//Update
+Route::put('/reservations/{reservation}', 'ReservationController@update');
+
+//Delete
+Route::get('/reservations/{reservation}/delete', 'ReservationController@delete');
