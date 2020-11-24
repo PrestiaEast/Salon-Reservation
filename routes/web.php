@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 
+
 //Index-read
 Route::get('/reservations', 'ReservationController@index');
 
@@ -53,4 +54,23 @@ Route::put('/employees/{employee}', 'EmployeesController@update');
 
 Route::get('/employees/{employee}/delete', 'EmployeesController@delete');
 
+
+
+//Index
+Route::get('/servicesrendered', 'ServicesrenderedController@index');
+
+//Create
+Route::get('/servicesrendered/create', 'ServicesrenderedController@create');
+
+//Store
+Route::post('/servicesrendered', 'ServicesrenderedController@store');
+
+//Edit
+Route::get('/servicesrendered/{ServiceRendered}/edit', 'ServicesrenderedController@edit')
+
+//Update
+Route::put('/servicesrendered/{ServiceRendered}', 'ServicesrenderedController@update');
+
+//Delete
+Route::delete('/servicesrendered/{ServiceRendered}', 'ServicesrenderedController@delete);
 
