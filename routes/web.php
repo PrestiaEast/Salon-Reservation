@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 //Index-read
 Route::get('/reservations', 'ReservationController@index');
 
@@ -37,3 +38,19 @@ Route::put('/reservations/{reservation}', 'ReservationController@update');
 
 //Delete
 Route::get('/reservations/{reservation}/delete', 'ReservationController@delete');
+
+Route::get('/employees', 'EmployeesController@index');
+
+Route::get('/employees/create', 'EmployeesController@create');
+
+Route::get('/employees/{employee}', 'EmployeesController@show');
+
+Route::post('/employees', 'EmployeesController@store');
+
+Route::get('/employees/{employee}/edit', 'EmployeesController@edit');
+
+Route::put('/employees/{employee}', 'EmployeesController@update');
+
+Route::get('/employees/{employee}/delete', 'EmployeesController@delete');
+
+
