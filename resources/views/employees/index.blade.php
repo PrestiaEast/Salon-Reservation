@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.main')
 @section('content')
 <div class="container">
 <h5>Employees</h5>
@@ -15,20 +15,25 @@
 <tbody>
 @foreach($employees as $employee)
 <tr>
-<td>{{ $employee->id }}</td>
-<td>{{ $employee->name }}</td>
-<td>{{ $employee->age }}</td>
-<td>{{ $employee->contact_number}}</td>
+<td>{{ $employees->id }}</td>
+<td>{{ $employees->name }}</td>
+<td>{{ $employees->age }}</td>
+<td>{{ $employees->contact_number}}</td>
+
 <td>
 <a href="/employees/{{ $employee->id }}">Show</a>
 |
 <a href="/employees/{{ $employee->id }}/edit">Edit</a>
 |
-<a href="/employees/{{ $employee->id }}/delete">Delete</a>
+<form method="POST" action="/customer/{{ $customer->id }}">
+							@method('DELETE')
+							<button type="submit">Delete</button>
+						</form>
+
+
 </td>
 </tr>
 @endforeach
 </tbody>
 </table>
-</div>
-@endsection
+@endsectionr
