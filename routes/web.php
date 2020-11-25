@@ -31,9 +31,9 @@ Route::put('/employees/{employee}', 'EmployeesController@update');
 
 Route::get('/employees/{employee}/delete', 'EmployeesController@delete');
 
-Route::get('/register', 'AuthController@register');
+Route::get('/newemployee', 'EmployeesController@store');
 
-Route::post('/register', 'AuthController@store');
+Route::post('/newemployee', 'EmployeesController@store');
 
 
 

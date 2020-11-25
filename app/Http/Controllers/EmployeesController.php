@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Employee;
 use Illuminate\Http\Request;
 
@@ -45,4 +46,16 @@ class EmployeesController extends Controller
     	$employee->delete();
     	return redirect('/employees');
     }
-}
+
+    public function store(){
+    $validated_fields = request()->validate([
+    'name' => 'required', 
+    'age' => 'required',
+    'contact_number' => 'required|unique:employees'
+    ]);
+
+    $employee = Employee::create($validated_fields);
+    return redirect('/employees');
+    }
+
+ }
