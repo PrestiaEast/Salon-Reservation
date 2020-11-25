@@ -38,3 +38,6 @@ Route::put('/services/{service}', 'ServicesController@update');
 //Delete
 Route::get('/services/{service}/delete', 'ServicesController@delete');
 
+//Request Validation
+Route::get('/newservices', 'AuthController@newservices');
+Route::post('/newservices', 'AuthController@newservices');

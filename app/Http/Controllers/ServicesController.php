@@ -7,13 +7,14 @@ use Illuminate\Http\Request;
 
 class ServicesController extends Controller
 {
+
     public function index()
     {
-    	$services = Service::get();
+    	$services = Services::get();
     	return view('services.index', compact('services'));
     }
 
-    public function show(Service $service)
+    public function show(Services $service)
     {
     	return view('services.show', compact('service'));
     }
@@ -25,7 +26,7 @@ class ServicesController extends Controller
 
 	public function store()
     {
-    	$service = new Service;
+    	$service = new Services;
     	$service->name = request()->name;
     	$service->charge = request()->charge;
     	$service->save();
@@ -33,12 +34,12 @@ class ServicesController extends Controller
     	return redirect('/services');
     }
 
-    public function edit(Service $service)
+    public function edit(Services $service)
     {
     	return view('services.edit', compact('service'));
     }
 
-    public function update(Service $service)
+    public function update(Services $service)
     {
     	$service->name = request()->name;
     	$service->charge = request()->charge;
@@ -47,11 +48,9 @@ class ServicesController extends Controller
     	return redirect('/services');
     }
 
-    public function delete(Service $service)
+    public function delete(Services $service)
     {
     	$service->delete();
     	return redirect('/services');
     }
-
-
 }
