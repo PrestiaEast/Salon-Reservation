@@ -26,10 +26,19 @@ class ServicesController extends Controller
 
 	public function store()
     {
-    	$service = new Services;
-    	$service->name = request()->name;
-    	$service->charge = request()->charge;
-    	$service->save();
+    	//$service = new Services;
+    	//$service->name = request()->name;
+    	//$service->charge = request()->charge;
+    	//$service->save();
+
+        //validate the form
+        $validated_fields = request()->validate([
+            'name' => 'required',
+            'price' => 'required'
+        ]);
+
+        //add service to the database
+        $service = Service::create($validated_fields);
 
     	return redirect('/services');
     }

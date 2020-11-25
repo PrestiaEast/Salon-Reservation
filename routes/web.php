@@ -39,5 +39,5 @@ Route::put('/services/{service}', 'ServicesController@update');
 Route::get('/services/{service}/delete', 'ServicesController@delete');
 
 //Request Validation
-Route::get('/newservices', 'AuthController@newservices');
-Route::post('/newservices', 'AuthController@newservices');
+Route::get('/newservices', 'AuthController@store');
+Route::post('/newservices', 'AuthController@store');

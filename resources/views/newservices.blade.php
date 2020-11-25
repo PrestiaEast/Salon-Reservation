@@ -1,5 +1,5 @@
 <html>
-	<form action="/newservices" method= 'POST'>
+	<form action="/store" method= 'POST'>
 		@include('layouts.errors')
 		@csrf
 		<input type="text" name='name' required placeholder="Name">
