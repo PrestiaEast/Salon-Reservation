@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class ServiceRendered extends Model
 {
-   protected $guarded = [];
+   protected $fillable = ['service_id', 'customer_id', 'month', 'service_charge'];
 }

@@ -34,3 +34,4 @@ Route::put('/servicesrendered/{ServiceRendered}', 'ServicesrenderedController@up
 
 //Delete
 Route::delete('/servicesrendered/{ServiceRendered}', 'ServicesrenderedController@delete);
+	

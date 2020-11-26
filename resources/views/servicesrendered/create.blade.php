@@ -1,8 +1,9 @@
 @extends('layouts.main')
 @section('content')
 	<div class="container">
-		<h5>Creata Service Rendered Form</h5>
-		<form method="POST" action="/servicesrendered">
+		<h5>Create Service Rendered Form</h5>
+		<form class="col s12" method="POST" action="/servicesrendered">
+			@include('layout.errors')
 			@csrf
   			<div class="form-group">
 			    <label for="exampleInputEmail1">ServicesID</label>
@@ -16,18 +17,18 @@
 
 		  	<div class="form-group">
 			    <label for="exampleInputPassword1">CustomerID</label>
-			    <input type="text" class="form-control" id="exampleInputPassword1" name="customer_id"> 
+			    <input required placeholder="CustomerID" type="text" class="validate" id="exampleInputPassword1" name="customer_id"> 
 		  	</div>
 
 		  	<div class="form-group">
 			    <label for="exampleInputPassword1">Month</label>
-			    <input type="text" class="form-control" id="exampleInputPassword1" name="month">
+			    <input required placeholder="Month" type="text" class="validate" id="exampleInputPassword1" name="month">
 		  	</div>
 
 
 			<div class="form-group">
 			    <label for="exampleInputPassword1">ServiceCharge/label>
-			    <input type="text" class="form-control" id="exampleInputPassword1" name="service_charge>"
+			    <input required placeholder="ServiceCharge"type="text" class="validate" id="exampleInputPassword1" name="service_charge>"
 		  	</div>
 
 		  	<button type="submit" class="btn btn-primary">Submit</button>
