@@ -2,38 +2,25 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('welcome');
 });
 
 //Index-read
-Route::get('/reservations', 'ReservationController@index');
+Route::get('/reservations', 'ReservationsController@index');
 
 //Create
-Route::get('/reservations/create', 'ReservationController@create');
-
-//Show - read
-Route::get('/reservations/{reservation}', 'ReservationController@show');
-
-//Store
-Route::post('/reservations', 'ReservationController@store');
+Route::get('/reservations/create', 'ReservationsController@create');
+Route::get('/reservations/{reservation}', 'ReservationsController@show');
 
 //Edit
-Route::get('/reservations/{reservation}/edit', 'ReservationController@edit');
+Route::get('/reservations/{reservation}/edit', 'ReservationsController@edit');
 
-//Update
-Route::put('/reservations/{reservation}', 'ReservationController@update');
+//POST /Store a record
+Route::post('/reservations', 'ReservationsController@store');
 
-//Delete
-Route::get('/reservations/{reservation}/delete', 'ReservationController@delete');
+//PUT /update a record
+Route::put('/reservation/{reservation}', 'ReservationsController@update');
+
+//DELETE
+Route::delete('/reservations/{reservation}', 'ReservationsController@delete');
