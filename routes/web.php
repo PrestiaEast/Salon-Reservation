@@ -66,11 +66,16 @@ Route::get('/servicesrendered/create', 'ServicesrenderedController@create');
 Route::post('/servicesrendered', 'ServicesrenderedController@store');
 
 //Edit
-Route::get('/servicesrendered/{ServiceRendered}/edit', 'ServicesrenderedController@edit')
+//Route::get('/servicesrendered/{ServiceRendered}/edit', 'ServicesrenderedController@edit')
 
 //Update
-Route::put('/servicesrendered/{ServiceRendered}', 'ServicesrenderedController@update');
+//Route::put('/servicesrendered/{ServiceRendered}', 'ServicesrenderedController@update');
 
 //Delete
-Route::delete('/servicesrendered/{ServiceRendered}', 'ServicesrenderedController@delete);
+//Route::delete('/servicesrendered/{ServiceRendered}', 'ServicesrenderedController@delete);
+
+
+Route::get('/login', 'AuthController@index')->name('login');
+Route::put('/login', 'AuthController@login');
+Route::get('/deshboard', 'Dashboardcontroller@index');
 
