@@ -4,29 +4,25 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<h5>Create Employee</h5>
-				<form action="/employees" method='POST'>
+				<h5>Update Services</h5>
+				<form action="/services/{{ $service->id }}" method='POST'>
+					@method('PUT')
 					@include('layouts.errors')
 					@csrf
+					
 					<div class="row">
 						<div class="input-field col s6">
-							<input placeholder="Employee Name" id="name" type="text" name='name'>
-							<label for="name">Employee Name:</label>
-		                </div>
-	                </div>
-					<div class="row">
-						<div class="input-field col s6">
-							<input placeholder="Age" id="age" type="text" name='age'>
-							<label for="age">Age:</label>
+							<input placeholder="Service Name" id="service_name" type="text" name='service_name' value='{{ $service->service_name }}'>
+							<label for="service_name">Service Name:</label>
 		                </div>
 	                </div>
 	                <div class="row">
 						<div class="input-field col s6">
-							<input placeholder="Contact Number" id="contact_number" type="text" name='contact_number'>
-							<label for="contact_number">Contact Number:</label>
+							<input placeholder="Service Charge" id="service_charge" type="text" name='service_charge' value='{{ $service->service_charge }}'>
+							<label for="service_charge">Service Charge:</label>
 		                </div>
 	                </div>
-	      
+	                
 	                <div class="row">
 	                	<div class="col s12">
 	                		<button class="btn waves-effect waves-light orange darken-3" type="submit" name="action">Submit

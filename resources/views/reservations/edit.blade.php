@@ -5,38 +5,32 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<h5>Update Reservation</h5>
-				<form action="/service-rendered/{{ $servicerendered->id }}" method='POST'>
+				<form action="/reservations/{{ $reservation->id }}" method='POST'>
 					@method('PUT')
 					@include('layouts.errors')
 					@csrf
 					<div class="row">
 						<div class="input-field col s6">
-							<input placeholder="Service ID" id="service_id" type="number" name='service_id' value='{{ $servicerendered->service_id }}'>
+							<input placeholder="Service Name" id="service_id" type="text" name='service_id' value='{{ $reservation->service_id }}'>
 							<label for="service_id">Service ID:</label>
 		                </div>
 	                </div>
 					<div class="row">
 						<div class="input-field col s6">
-							<input placeholder="Customer ID" id="customer_id" type="number" name='customer_id' value='{{ $servicerendered->customer_id }}'>
-							<label for="customer_id">Customer ID:</label>
-		                </div>
-	                </div>
-	                <div class="row">
-						<div class="input-field col s6">
-							<input placeholder="Service Name" id="service_name" type="text" name='service_name' value='{{ $servicerendered->service_name }}'>
+							<input placeholder="Service Name" id="service_name" type="text" name='service_name' value='{{ $reservation->service_name }}'>
 							<label for="service_name">Service Name:</label>
 		                </div>
 	                </div>
 	                <div class="row">
 						<div class="input-field col s6">
-							<input placeholder="Service Charge" id="service_charge" type="text" name='service_charge' value='{{ $servicerendered->service_charge }}'>
+							<input placeholder="Service Charge" id="service_charge" type="text" name='service_charge' value='{{ $reservation->service_charge }}'>
 							<label for="service_charge">Service Charge:</label>
 		                </div>
 	                </div>
 	                <div class="row">
 						<div class="input-field col s6">
-							<input placeholder="Month" id="month" type="text" name='month' value='{{ $servicerendered->month }}'>
-							<label for="month">Month</label>
+							<input placeholder="Employee Name" id="employee_name" type="text" name='employee_name' value='{{ $reservation->employee_name }}'>
+							<label for="employee_name">Employee Name</label>
 		                </div>
 	                </div>
 	                <div class="row">

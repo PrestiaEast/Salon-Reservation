@@ -1,41 +1,57 @@
-@extends('layout.main')
+@extends('layouts.master')
+
 @section('content')
 	<div class="container">
-		<h5>Customer</h5>
-		<table class="striped">
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>Reservation ID</th>
-					<th>Name</th>
-					<th>Age</th>
-					<th>Contact Number</th>
-					<th>Services Reserved</th>
-					<th>Time Arrived</th>
-					<th>Actions</th>
-				</tr>
-			</thead>
-			<tbody>
-				@foreach($customers as $customer)
-				<tr>
-					<td>{{ $customer->id }}</td>
-					<td>{{ $customer->reservation_id }}</td>
-					<td>{{ $customer->name }}</td>
-					<td>{{ $customer->age }}</td>
-					<td>{{ $customer->contact_number }}</td>
-					<td>{{ $customer->services_reserved }}</td>
-					<td>{{ $customer->time_arrived }}</td>
-					<td>
-						<a href="/customer/{{ $customer->id}}">Show</a>
-						|
-						<a href="/customer/{{ $customer->id}}/edit">Edit</a>
-						<form method="POST" action="/customer/{{ $customer->id }}">
-							@method('DELETE')
-							<button type="submit">Delete</button>
-						</form>
-					</td>
-				</tr>
-				@endforeach
-			</tbody>
-		</table>
+		<div class="row">
+			<div class="col-sm-12">
+				<h5>Customers</h5>
+				<a href="/customers/create" class="btn waves-effect waves-light black">Create Customer<i class="material-icons left">create</i></a><br><br>
+				
+				<table class="striped">
+
+					<tr>
+						<th>ID</th>
+						<th>Customer Name</th>
+						<th>Age</th>
+						<th>Contact Number</th>
+						<th>Services Reserved</th>
+						<th>Time Arrived</th>
+				    </tr>
+
+				    <tr>
+				    	<td>
+						@foreach($customers as $customer)
+							<a href="/customers/{{$customer->id}}">{{$customer->id}}</a><br>
+						@endforeach
+						</td>
+				   		<td>
+				   			@foreach($customers as $customer)
+				   				{{ $customer->name }} <br>
+				   			@endforeach
+				   		</td>
+				   		<td>
+				   			@foreach($customers as $customer)
+				   				{{ $customer->age }} <br>
+				   			@endforeach
+				   		</td>
+				   		<td>
+				   			@foreach($customers as $customer)
+				   				{{ $customer->contact_number }} <br>
+				   			@endforeach
+				   		</td>
+				   		<td>
+				   			@foreach($customers as $customer)
+				   				{{ $customer->services_reserved }} <br>
+				   			@endforeach
+				   		</td>
+				   		<td>
+				   			@foreach($customers as $customer)
+				   				{{ $customer->time_arrived }} <br>
+				   			@endforeach
+				   		</td>
+				   	</tr>
+				 </table>
+		    </div>
+	    </div>
+	</div>
 @endsection

@@ -1,37 +1,52 @@
+@extends('layouts.master')
+
 @section('content')
 	<div class="container">
-		<h5>Creata Service Rendered Form</h5>
-		<form method="POST" action="/servicesrendered">
-			@csrf
-  			<div class="form-group">
-			    <label for="exampleInputEmail1">ServicesID</label>
-			    <select class="custom-select" name="service_id">
-			    	@foreach($servicesID as serviceID)
-			    		<option value="{{ serviceID }}">{{ serviceID }}</option>
-			    	@endforeach
-				</select>
-
-			</div>
-
-		  	<div class="form-group">
-			    <label for="exampleInputPassword1">CustomerID</label>
-			    <input type="text" class="form-control" id="exampleInputPassword1" name="customer_id"> 
-		  	</div>
-
-		  	<div class="form-group">
-			    <label for="exampleInputPassword1">Month</label>
-			    <input type="text" class="form-control" id="exampleInputPassword1" name="month">
-		  	</div>
-
-
-			<div class="form-group">
-			    <label for="exampleInputPassword1">ServiceCharge/label>
-			    <input type="text" class="form-control" id="exampleInputPassword1" name="service_charge>"
-		  	</div>
-
-		  	<button type="submit" class="btn btn-primary">Submit</button>
-		</form>
+		<div class="row">
+			<div class="col-sm-12">
+				<h5>Create Service Rendered</h5>
+				<form action="/service-rendered" method='POST'>
+					@include('layouts.errors')
+					@csrf
+					<div class="row">
+						<div class="input-field col s6">
+							<input placeholder="Service ID" id="service_id" type="number" name='service_id'>
+							<label for="service_id">Service ID:</label>
+		                </div>
+	                </div>
+					<div class="row">
+						<div class="input-field col s6">
+							<input placeholder="Customer ID" id="customer_id" type="number" name='customer_id'>
+							<label for="customer_id">Customer ID:</label>
+		                </div>
+	                </div>
+	                <div class="row">
+						<div class="input-field col s6">
+							<input placeholder="Service Name" id="service_name" type="text" name='service_name'>
+							<label for="service_name">Service Name:</label>
+		                </div>
+	                </div>
+	                <div class="row">
+						<div class="input-field col s6">
+							<input placeholder="Service Charge" id="service_charge" type="text" name='service_charge'>
+							<label for="service_charge">Service Charge:</label>
+		                </div>
+	                </div>
+	                <div class="row">
+						<div class="input-field col s6">
+							<input placeholder="Month" id="month" type="text" name='month'>
+							<label for="month">Month</label>
+		                </div>
+	                </div>
+	                <div class="row">
+	                	<div class="col s12">
+	                		<button class="btn waves-effect waves-light orange darken-3" type="submit" name="action">Submit
+	                			<i class="material-icons right">send</i>
+	                		</button>
+	                	</div>
+	                </div>
+	            </form>
+	        </div>
+	    </div>
 	</div>
-
-
 @endsection

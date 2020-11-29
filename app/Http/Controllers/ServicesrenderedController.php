@@ -7,54 +7,76 @@ use Illuminate\Http\Request;
 
 class ServicesrenderedController extends Controller
 {
-    
     public function index()
     {
-    	$servicesrendered = ServiceRendered::get();
-    	return view('servicesrendered.index', compact('servicesrendered'));
+        $servicerendereds = ServiceRendered::all();
+        return view('servicesrendered.index', compact('servicerendereds'));
+    }
+
+    public function show(ServiceRendered $servicerendered)
+    {
+        return view('servicesrendered.show', compact('servicerendered'));
     }
 
     public function create()
     {
-    	$servicesID = ['001', '002', '003', '004', '005'];
-    	return view('servicesrendered.create', compact('servicesID'));
+        return view('servicesrendered.create');
     }
 
     public function store()
     {
-    	$servicerendered = new ServicesRendered;
-    	$servicerendered->service_id = request()->service_id;
-    	$servicerendered->customer_id = request()->customer_id;
-    	$servicerendered->month = request()->month;
-    	$servicerendered->service_charge = request()->service_charge;
-    	$servicerendered->save();
+        //$servicerendered = new ServiceRendered;
+        //$servicerendered->service_id = request()->service_id;
+        //$servicerendered->customer_id = request()->customer_id;
+        //$servicerendered->service_name = request()->service_name;
+        //$servicerendered->service_charge = request()->service_charge;
+        //$servicerendered->month = request()->month;
+        //$servicerendered->save();
 
-    	return redirect('/servicesrendered');
+        $validated_fields = request()->validate([
+            'service_id' => 'required|unique:service_rendereds',
+            'customer_id' => 'required|unique:service_rendereds',
+            'service_name' => 'required',
+            'service_charge' => 'required',
+            'month' => 'required'
+        ]);
+
+        $servicerendered = ServiceRendered::create($validated_fields);
+
+        return redirect('/service-rendered');
     }
 
     public function edit(ServiceRendered $servicerendered)
     {
-    	$servicesID = ['001', '002', '003', '004', '005'];
-    	return view('servicesrendered.edit', compact('servicerendered', 'servicesID'));
+        return view('servicesrendered.edit', compact('servicerendered'));
     }
 
-    public function update(ServiceRendered $servicerendered)
+    public function update (ServiceRendered $servicerendered)
     {
-    	$servicerendered->update([
-    		'service_id' => request()->service_id,
-    		'customer_id' = request()->customer_id,
-    		'month' = request()->month,
-    		'service_charge' = request()->service_charge
-    	]);
+        //$servicerendered->service_id = request()->service_id;
+        //$servicerendered->customer_id = request()->customer_id;
+        //$servicerendered->service_name = request()->service_name;
+        //$servicerendered->service_charge = request()->service_charge;
+        //$servicerendered->month = request()->month;
+        //$servicerendered->save();
 
-    	return redirect('/servicesrendered');
-   } 
+        $validated_fields = request()->validate([
+            'service_id' => 'required',
+            'customer_id' => 'required',
+            'service_name' => 'required',
+            'service_charge' => 'required',
+            'month' => 'required'           
 
-   public function delete(ServiceRendered $servicerendered)
-   {
-   		$servicerendered->delete();
-   		return redirect('/servicesrendered');
-   } 
-   }
+        ]);
+
+        $servicerendered->update($validated_fields);
+
+        return redirect('/service-rendered/'.$servicerendered->id);
+    }
+
+    public function delete(ServiceRendered $servicerendered)
+    {
+        $servicerendered->delete();
+        return redirect('/service-rendered');
+    }
 }
-
