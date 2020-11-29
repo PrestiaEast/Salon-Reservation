@@ -100,3 +100,16 @@ Route::get('/employees/{employee}/edit', 'EmployeesController@edit');
 Route::put('/employees/{employee}', 'EmployeesController@update');
 
 Route::delete('/employees/{employee}', 'EmployeesController@delete');
+
+
+//LOGIN**
+Route::get('/login', 'AuthController@index')->name('login');
+Route::post('/login', 'AuthController@login');
+
+Route::get('/register', 'AuthController@register');
+Route::post('/register', 'AuthController@store');
+
+Route::middleware(['auth'])->group(function() {
+Route::get('/dashboard', 'DashboardController@index');
+Route::get('/logout', 'AuthController@logout');
+});
