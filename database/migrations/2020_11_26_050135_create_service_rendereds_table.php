@@ -15,7 +15,7 @@ class CreateServiceRenderedsTable extends Migration
     {
         Schema::create('service_rendereds', function (Blueprint $table) {
             $table->id();
-            $table->string('service_id')->unique();
+            $table->string('service_id');
             $table->integer('customer_id');
             $table->string('service_name');
             $table->integer('service_charge');
