@@ -11,6 +11,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+<<<<<<< Updated upstream
         // $this->call(UserSeeder::class);
+=======
+        $this->call([
+        	UsersTableSeeder::class,
+        	ReservationsTableSeeder::class
+        ]);
+>>>>>>> Stashed changes
     }
 }
