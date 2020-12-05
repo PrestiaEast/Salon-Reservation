@@ -14,7 +14,7 @@
 				</form>
 				<br>
 
-				<h5>Customer ID: {{ $reservation->service_rendered_id}}</h5>
+				<h5>Customer ID: {{ $reservation->customer_id}}</h5>
 				<h5>Service ID: {{ $reservation->service_id}}</h5>
 				<h5>Employee ID: {{ $reservation->employee_id}}</h5>
 				<h5>Reservation Time: {{ $reservation->reservation_time}}</h5>
