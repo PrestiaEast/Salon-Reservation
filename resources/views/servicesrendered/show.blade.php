@@ -15,10 +15,7 @@
 				<br>
 
 				<h5>Service ID: {{ $servicerendered->service_id}}</h5>
-				<h5>Customer ID: {{ $servicerendered->customer_id}}</h5>
-				<h5>Service Name: {{ $servicerendered->service_name}}</h5>
-				<h5>Service Charge: {{ $servicerendered->service_charge}}</h5>
-				<h5>Month: {{ $servicerendered->month}}</h5>
+				<h5>Date: {{ $servicerendered->date}}</h5>
 				
 				
 		    </div>

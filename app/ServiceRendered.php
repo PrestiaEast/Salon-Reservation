@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class ServiceRendered extends Model
 {
-    protected $fillable = ['service_id', 'customer_id', 'service_name', 'service_charge', 'month'];
+	protected $table = 'servicerendereds';
+    protected $fillable = ['service_id', 'date'];
+
+    public function services(){
+    	return $this->hasMany(Service::class);
+    }
 }

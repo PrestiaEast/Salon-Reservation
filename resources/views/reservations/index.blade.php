@@ -11,10 +11,10 @@
 
 					<tr>
 						<th>ID</th>
+						<th>Customer ID</th>
 						<th>Service ID</th>
-						<th>Service Name</th>
-						<th>Service Charge</th>
-						<th>Employee Name</th>
+						<th>Employee ID</th>
+						<th>Reservation Time</th>
 					
 				    </tr>
 
@@ -26,22 +26,22 @@
 					</td>
 				   		<td>
 				   			@foreach($reservations as $reservation)
+				   				{{ $reservation->customer_id }} <br>
+				   			@endforeach
+				   		</td>
+				   		<td>
+				   			@foreach($reservations as $reservation)
 				   				{{ $reservation->service_id }} <br>
 				   			@endforeach
 				   		</td>
 				   		<td>
 				   			@foreach($reservations as $reservation)
-				   				{{ $reservation->service_name }} <br>
+				   				{{ $reservation->employee_id }} <br>
 				   			@endforeach
 				   		</td>
 				   		<td>
 				   			@foreach($reservations as $reservation)
-				   				{{ $reservation->service_charge }} <br>
-				   			@endforeach
-				   		</td>
-				   		<td>
-				   			@foreach($reservations as $reservation)
-				   				{{ $reservation->employee_name }} <br>
+				   				{{ $reservation->reservation_time }} <br>
 				   			@endforeach
 				   		</td>
 				   	</tr>

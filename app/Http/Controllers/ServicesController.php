@@ -25,14 +25,10 @@ class ServicesController extends Controller
 
     public function store()
     {
-        //$service = new Service;
-        //$service->service_name = request()->service_name;
-        //$service->service_charge = request()->service_charge;
-        //$service->save();
-
         $validated_fields = request()->validate([
+            'employee_id' => 'required',
             'service_name' => 'required',
-            'service_charge' => 'required',
+            'service_charge' => 'required'
         ]);
 
         $service = Service::create($validated_fields);
@@ -47,11 +43,8 @@ class ServicesController extends Controller
 
     public function update (Service $service)
     {
-        //$service->service_name = request()->service_name;
-        //$service->service_charge = request()->service_charge;
-        //$service->save();
-
         $validated_fields = request()->validate([
+            'employee_id' => 'required',
             'service_name' => 'required',
             'service_charge' => 'required'           
 

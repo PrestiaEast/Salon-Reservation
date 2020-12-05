@@ -9,7 +9,12 @@
 					@method('PUT')
 					@include('layouts.errors')
 					@csrf
-					
+					<div class="row">
+						<div class="input-field col s6">
+							<input placeholder="Employee ID" id="employee_id" type="text" name='employee_id' value='{{ $service->employee_id }}'>
+							<label for="employee_id">Employee ID:</label>
+		                </div>
+	                </div>
 					<div class="row">
 						<div class="input-field col s6">
 							<input placeholder="Service Name" id="service_name" type="text" name='service_name' value='{{ $service->service_name }}'>

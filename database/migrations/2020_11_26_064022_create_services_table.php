@@ -15,6 +15,7 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
+            $table->integer('employee_id');
             $table->string('service_name');
             $table->integer('service_charge');
             $table->timestamps();

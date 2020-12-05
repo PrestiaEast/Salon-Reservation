@@ -14,10 +14,10 @@
 				</form>
 				<br>
 
+				<h5>Customer ID: {{ $reservation->service_rendered_id}}</h5>
 				<h5>Service ID: {{ $reservation->service_id}}</h5>
-				<h5>Service Name: {{ $reservation->service_name}}</h5>
-				<h5>Service Charge: {{ $reservation->service_charge}}</h5>
-				<h5>Employee Name: {{ $reservation->employee_name}}</h5>
+				<h5>Employee ID: {{ $reservation->employee_id}}</h5>
+				<h5>Reservation Time: {{ $reservation->reservation_time}}</h5>
 				
 				
 		    </div>

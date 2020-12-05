@@ -9,12 +9,7 @@
           @method('PUT')
           @include('layouts.errors')
           @csrf
-          <div class="row">
-            <div class="input-field col s6">
-              <input placeholder="Reservation ID" id="reservation_id" type="text" name='reservation_id' value='{{ $customer->reservation_id }}'>
-              <label for="name">Reservation ID:</label>
-                    </div>
-                  </div>
+         
           <div class="row">
             <div class="input-field col s6">
               <input placeholder="Customer Name" id="name" type="text" name='name' value='{{ $customer->name }}'>
@@ -35,16 +30,11 @@
                   </div>
                   <div class="row">
             <div class="input-field col s6">
-              <input placeholder="Services Reserved" id="services_reserved" type="text" name='services_reserved' value='{{ $customer->services_reserved }}'>
-              <label for="services_reserved">Services Reserved</label>
+              <input placeholder="Service Reserved" id="service_reserved" type="text" name='service_reserved' value='{{ $customer->service_reserved }}'>
+              <label for="service_reserved">Service Reserved</label>
                     </div>
                   </div>
-                  <div class="row">
-            <div class="input-field col s6">
-              <input placeholder="Time Arrived" id="time_arrived" type="text" name='time_arrived' value='{{ $customer->time_arrived }}'>
-              <label for="time_arrived">Time Arrived</label>
-                    </div>
-                  </div>
+                  
                   <div class="row">
                     <div class="col s12">
                       <button class="btn waves-effect waves-light orange darken-3" type="submit" name="action">Submit

@@ -9,8 +9,8 @@ class ServicesrenderedController extends Controller
 {
     public function index()
     {
-        $servicerendereds = ServiceRendered::all();
-        return view('servicesrendered.index', compact('servicerendereds'));
+        $service_rendereds = ServiceRendered::all();
+        return view('servicesrendered.index', compact('service_rendereds'));
     }
 
     public function show(ServiceRendered $servicerendered)
@@ -25,20 +25,9 @@ class ServicesrenderedController extends Controller
 
     public function store()
     {
-        //$servicerendered = new ServiceRendered;
-        //$servicerendered->service_id = request()->service_id;
-        //$servicerendered->customer_id = request()->customer_id;
-        //$servicerendered->service_name = request()->service_name;
-        //$servicerendered->service_charge = request()->service_charge;
-        //$servicerendered->month = request()->month;
-        //$servicerendered->save();
-
         $validated_fields = request()->validate([
             'service_id' => 'required|unique:service_rendereds',
-            'customer_id' => 'required|unique:service_rendereds',
-            'service_name' => 'required',
-            'service_charge' => 'required',
-            'month' => 'required'
+            'date' => 'required'
         ]);
 
         $servicerendered = ServiceRendered::create($validated_fields);
@@ -53,19 +42,9 @@ class ServicesrenderedController extends Controller
 
     public function update (ServiceRendered $servicerendered)
     {
-        //$servicerendered->service_id = request()->service_id;
-        //$servicerendered->customer_id = request()->customer_id;
-        //$servicerendered->service_name = request()->service_name;
-        //$servicerendered->service_charge = request()->service_charge;
-        //$servicerendered->month = request()->month;
-        //$servicerendered->save();
-
         $validated_fields = request()->validate([
             'service_id' => 'required',
-            'customer_id' => 'required',
-            'service_name' => 'required',
-            'service_charge' => 'required',
-            'month' => 'required'           
+            'date' => 'required'           
 
         ]);
 

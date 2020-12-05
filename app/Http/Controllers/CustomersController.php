@@ -26,20 +26,11 @@ class CustomersController extends Controller
 
 	public function store()
 	{
-		//$customer = new Customer;
-		//$customer->name = request()->name;
-		//$customer->age = request()->age;
-		//$customer->contact_number = request()->contact_number;
-		//$customer->services_reserved = request()->services_reserved;
-		//$customer->save();
-
 		$validated_fields = request()->validate([
-			'reservation_id' => 'required',
 			'name' => 'required',
 			'age' => 'required',
 			'contact_number' => 'required|unique:customers',
-			'services_reserved' => 'required',
-			'time_arrived' => 'required'
+			'service_reserved' => 'required',
 		]);
 		//add customer in database
 		$customer = Customer::create($validated_fields);
@@ -54,22 +45,11 @@ class CustomersController extends Controller
 
 	public function update(Customer $customer)
 	{
-		//$customer->reservation_id = request()->reservation_id;
-		//$customer->name = request()->name;
-		//$customer->age = request()->age;
-		//$customer->contact_number = request()->contact_number;
-		//$customer->services_reserved = request()->services_reserved;
-		//$customer->time_arrived = request()->time_arrived;
-		//$customer->save();
-
 		$validated_fields = request()->validate([
-            'reservation_id' => 'required',
             'name' => 'required', 
             'age' => 'required',  
             'contact_number' => 'required',  
-            'services_reserved' => 'required',
-            'name' => 'required', 
-            'time_arrived' => 'required'     
+            'service_reserved' => 'required',     
 
         ]);
 

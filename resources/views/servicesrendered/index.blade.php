@@ -12,42 +12,24 @@
 					<tr>
 						<th>ID</th>
 						<th>Service ID</th>
-						<th>Customer ID</th>
-						<th>Service Name</th>
-						<th>Service Charge</th>
-						<th>Month</th>
+						<th>Date</th>
 					
 				    </tr>
 
 				    <tr>
 				    	<td>
-						@foreach($servicerendereds as $servicerendered)
+						@foreach($service_rendereds as $servicerendered)
 							<a href="/service-rendered/{{$servicerendered->id}}">{{$servicerendered->id}}</a><br>
 						@endforeach
 					</td>
 				   		<td>
-				   			@foreach($servicerendereds as $servicerendered)
+				   			@foreach($service_rendereds as $servicerendered)
 				   				{{ $servicerendered->service_id }} <br>
 				   			@endforeach
 				   		</td>
 				   		<td>
-				   			@foreach($servicerendereds as $servicerendered)
-				   				{{ $servicerendered->customer_id }} <br>
-				   			@endforeach
-				   		</td>
-				   		<td>
-				   			@foreach($servicerendereds as $servicerendered)
-				   				{{ $servicerendered->service_name }} <br>
-				   			@endforeach
-				   		</td>
-				   		<td>
-				   			@foreach($servicerendereds as $servicerendered)
-				   				{{ $servicerendered->service_charge }} <br>
-				   			@endforeach
-				   		</td>
-				   		<td>
-				   			@foreach($servicerendereds as $servicerendered)
-				   				{{ $servicerendered->month }} <br>
+				   			@foreach($service_rendereds as $servicerendered)
+				   				{{ $servicerendered->date }} <br>
 				   			@endforeach
 				   		</td>
 				   	</tr>

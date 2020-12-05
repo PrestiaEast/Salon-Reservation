@@ -11,6 +11,7 @@
 
 					<tr>
 						<th>ID</th>
+						<th>Employee ID</th>
 						<th>Service Name</th>
 						<th>Service Charge</th>
 				    </tr>
@@ -22,6 +23,11 @@
 						@endforeach
 					</td>
 				   		
+				   		<td>
+				   			@foreach($services as $service)
+				   				{{ $service->employee_id }} <br>
+				   			@endforeach
+				   		</td>
 				   		<td>
 				   			@foreach($services as $service)
 				   				{{ $service->service_name }} <br>

@@ -14,8 +14,7 @@
 						<th>Customer Name</th>
 						<th>Age</th>
 						<th>Contact Number</th>
-						<th>Services Reserved</th>
-						<th>Time Arrived</th>
+						<th>Service Reserved</th>
 				    </tr>
 
 				    <tr>
@@ -41,12 +40,7 @@
 				   		</td>
 				   		<td>
 				   			@foreach($customers as $customer)
-				   				{{ $customer->services_reserved }} <br>
-				   			@endforeach
-				   		</td>
-				   		<td>
-				   			@foreach($customers as $customer)
-				   				{{ $customer->time_arrived }} <br>
+				   				{{ $customer->service_reserved }} <br>
 				   			@endforeach
 				   		</td>
 				   	</tr>

@@ -25,18 +25,11 @@ class ReservationsController extends Controller
 
     public function store()
     {
-        //$reservation = new Reservation;
-        //$reservation->service_id = request()->service_id;
-        //$reservation->service_name = request()->service_name;
-        //$reservation->service_charge = request()->service_charge;
-        //$reservation->employee_name = request()->employee_name;
-        //$reservation->save();
-
         $validated_fields = request()->validate([
-            'service_id' => 'required|unique:reservations',
-            'service_name' => 'required',
-            'service_charge' => 'required',
-            'employee_name' => 'required'
+            'customer_id' => 'required',
+            'service_id' => 'required',
+            'employee_id' => 'required',
+            'reservation_time' => 'required'
         ]);
        
         $reservation = Reservation::create($validated_fields);
@@ -51,17 +44,11 @@ class ReservationsController extends Controller
 
     public function update(Reservation $reservation)
     {
-        //$reservation->service_id = request()->service_id;
-        //$reservation->service_name = request()->service_name;
-        //$reservation->service_charge = request()->service_charge;
-        //$reservation->employee_name = request()->employee_name;
-        //$reservation->save();
-
         $validated_fields = request()->validate([
+            'customer_id' => 'required',
             'service_id' => 'required',
-            'service_name' => 'required',
-            'service_charge' => 'required',
-            'employee_name' => 'required'           
+            'employee_id' => 'required',
+            'reservation_time' => 'required'           
 
         ]);
 

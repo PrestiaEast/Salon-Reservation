@@ -14,6 +14,7 @@
 				</form>
 				<br>
 
+				<h5>Employee ID: {{ $service->employee_id}}</h5>
 				<h5>Service Name: {{ $service->service_name}}</h5>
 				<h5>Service Charge: {{ $service->service_charge}}</h5>
 				

@@ -10,26 +10,26 @@
 					@csrf
 					<div class="row">
 						<div class="input-field col s6">
-							<input placeholder="Service ID" id="service_id" type="text" name='service_id'>
-							<label for="service_id">Service ID:</label>
+							<input placeholder="Customer ID" id="customer_id" type="text" name='customer_id'>
+							<label for="customer_id">Customer ID:</label>
 		                </div>
 	                </div>
 					<div class="row">
 						<div class="input-field col s6">
-							<input placeholder="Service Name" id="service_name" type="text" name='service_name'>
-							<label for="service_name">Service Name:</label>
+							<input placeholder="Service ID" id="service_id" type="text" name='service_id'>
+							<label for="service_id">Service ID:</label>
 		                </div>
 	                </div>
 	                <div class="row">
 						<div class="input-field col s6">
-							<input placeholder="Service Charge" id="service_charge" type="text" name='service_charge'>
-							<label for="service_charge">Service Charge:</label>
+							<input placeholder="Employee ID" id="employee_id" type="text" name='employee_id'>
+							<label for="employee_id">Employee ID</label>
 		                </div>
 	                </div>
 	                <div class="row">
 						<div class="input-field col s6">
-							<input placeholder="Employee Name" id="employee_name" type="text" name='employee_name'>
-							<label for="employee_name">Employee Name</label>
+							<input placeholder="Reservation Time" id="reservation_time" type="text" name='reservation_time'>
+							<label for="reservation_time">Reservation Time</label>
 		                </div>
 	                </div>
 	                <div class="row">
